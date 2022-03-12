@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Intermediate 1</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/themes/hot-sneaks/jquery-ui.css" type="text/css" media="all" />
+    <link rel="stylesheet" href="jquery_intermediate_1.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("img").click(function() {
+                $(this).hide();
+            });
+            $("#restore").click(function() {
+                $("img").show();
+            });
+            $(".datepicker").datepicker();
+            $('#main-form').submit(function(e) {
+                e.preventDefault();
+                $("#confirm").text("Cool!  So you want to leave on " + $('#leave').val() + " and return on " + $('#return').val() + ".");
+            });
+        });
+    </script>
+</head>
+
+<body>
+    <div id="wrapper">
+        <h2>jQuery Intermediate Assignment 1 - Part 1 - Disappearing/Reappearing Image</h2>
+        <p>Click any image to make it disappear. Click the "Restore" button at the button to make them all reappear.</p>
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <img src="https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcR3FzG-JMKpKsf8W7qzEgOx1SUyX_sikToOgA7BvlF79cN9xO7u_zuXafvV" alt="whale">
+        <br>
+        <button id="restore">Restore</button>
+        <br><br>
+        <h2>jQuery Intermediate Assignment 1 - Part 2 - Date Picker</h2>
+        <p id="confirm">When do you want to travel?</p>
+        <form id="main-form">
+            <p>Leaving: <input type="text" class="datepicker" id="leave" /></p>
+            <p>Returning: <input type="text" class="datepicker" id="return" /></p>
+            <input type="submit">
+        </form>
+    </div>
+</body>
+
+</html>

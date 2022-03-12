@@ -1,0 +1,58 @@
+<html>
+
+<head>
+    <title>Background Chooser</title>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('#main_box').click(function() {
+                // alert('you clicked the main box!');
+                //comment this out when you have figured out what event.stopPropagation is used for
+                $('#container').css('background-image', 'none');
+            })
+            $('.mini_boxes').click(function(event) {
+                event.stopPropagation();
+                // alert("you clicked a mini box!");
+                // $('#container').css('background-image',url('+$(this).attr('src')+')'))
+
+                $('#container').css("background-image", "url(" + $(this).attr("src") + ")");
+                console.log($(this).attr("src"));
+            });
+            $('img').css('border', '0px');
+            $(this).css('border', '2px solid yellow');
+        })
+    </script>
+    <style>
+        #container {
+            background-color: lightgray;
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 10px;
+        }
+        
+        #container img {
+            display: block;
+            width: 200px;
+            height: 100px;
+            margin: 10px 0 15px 10px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin: 30px;
+            font-family: Verdana;
+        }
+    </style>
+</head>
+
+<body id="container">
+    <h1>Background Chooser</h1>
+    <div id="main_box">
+        <img src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-10.gif" class="mini_boxes">
+        <img id="image_2" src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-36.gif" class="mini_boxes">
+        <img src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-47.gif" class="mini_boxes">
+        <img src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-23.gif" class="mini_boxes">
+    </div>
+</body>
+
+</html>
